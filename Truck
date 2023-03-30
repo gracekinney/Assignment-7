@@ -1,0 +1,57 @@
+public class Truck extends Vehicle
+{
+   private int capacity;
+   private int numAxles;
+   final private int DEF_CAPACITY = 1;
+   final private int DEF_AXLES = 2;
+   
+   public Truck(Person p, String make, String model, int year, int mileage, int capacity, int numAxles)
+   {
+      super(p,make,model,year,mileage);
+      this.capacity = capacity;
+      this.numAxles = numAxles;
+   }
+   
+   public Truck(String name, String address, String phone, String make, String model, int year, int mileage)
+   {
+      super(new Person(name,address,phone),make,model,year,mileage);
+      this.capacity = DEF_CAPACITY;
+      this.numAxles = DEF_AXLES;
+   } 
+   
+   public int getCapacity()
+   {
+      return capacity;
+   }
+   
+   public int getNumAxles()
+   {
+      return numAxles;
+   }
+   
+   public void setCapacity(int c)
+   {
+      this.capacity = capacity;
+   }
+   
+   public void setNumAxles(int num)
+   {
+      this.numAxles= num;
+   }
+   
+   @Override
+   public String toString()
+   {
+     return String.format("%s %d ton %d axles",super.toString(),capacity,numAxles);
+   }
+   
+   @Override
+   public boolean equals(Object other)
+   {
+      Truck tOther = (Truck)other;
+   
+      return super.equals(tOther) &&
+             this.capacity==(tOther.capacity) &&
+             this.numAxles==(tOther.numAxles);
+   }
+}
