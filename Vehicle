@@ -1,0 +1,108 @@
+/**
+Grace E. Kinney
+CS 110 Section A
+
+Vehicle class hold data about 
+*/
+
+public class Vehicle
+{
+   //instance variables
+   private Person person;
+   private String make;
+   private String model;
+   private int year;
+   private int mileage;
+   
+   /**
+      Constructor
+   */
+   public Vehicle(Person p, String make, String model, int year, int mileage)
+   {
+      this.person = p;
+      this.make = make;
+      this.model = model;
+      this.year = year;
+      this.mileage = mileage;
+   }
+   
+   /**
+      Constructor
+   */
+   public Vehicle(Person p, String make, String model, int year)
+   {
+      this.person = p;
+      this.make = make;
+      this.model = model;
+      this.year = year;
+      this.mileage = 0;
+   }
+   
+   public Person getOwner()
+   {
+      return person;
+   }
+   
+   public String getMake()
+   {
+      return make;
+   }
+   
+   public String getModel()
+   {
+      return model;
+   }
+   
+   public int getYear()
+   {
+      return year;
+   }
+   
+   public int getMileage()
+   {
+      return mileage;
+   }
+   
+   public void setOwner(Person person)
+   {
+      this.person = person;
+   }
+   
+   public void setMake(String make)
+   {
+      this.make = make;
+   }
+   
+   public void setModel(String model)
+   {
+      this.model = model;
+   }
+   
+   public void setYear(int year)
+   {
+      this.year = year;
+   }
+   
+   public void setMileage(int mileage)
+   {
+      this.mileage = mileage;
+   }
+   
+   @Override
+   public String toString()
+   {
+      return String.format("%s %s %s %d %d miles",getOwner(),make,model,year,mileage);
+   }
+   
+   @Override
+   public boolean equals(Object other)
+   {
+      Vehicle vOther = (Vehicle)other;
+      
+      return this.person.equals(vOther.person) &&
+             this.make.equals(vOther.make) &&
+             this.model.equals(vOther.model) &&
+             this.year==(vOther.year) &&
+             this.mileage==(vOther.mileage);
+   }
+}
