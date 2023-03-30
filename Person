@@ -1,0 +1,59 @@
+public class Person //COMPILES!!
+{
+   private String name;
+   private String address;
+   private String phone;
+   
+   public Person(String n, String a, String p)
+   {
+      this.name = n;
+      this.address = a;
+      this.phone = p;
+   }
+   
+   public String getName()
+   {
+      return name;
+   }
+   
+   public String getAddress()
+   {
+      return address;
+   }
+   
+   public String getPhone()
+   {
+      return phone;
+   }
+   
+   public void setName(String name)
+   {
+      this.name = name;
+   }
+   
+   public void setAddress(String address)
+   {
+      this.address = address;
+   }
+   
+   public void setPhone(String phone)
+   {
+      this.phone = phone;
+   }
+   
+   @Override
+   public String toString()
+   {
+      return String.format("%s, %s, %s\n",name,address,phone);
+   }
+   
+   @Override
+   public boolean equals(Object other)
+   {
+      Person pOther = (Person)other;
+      
+      return this.name.equals(pOther.name) &&
+             this.address.equals(pOther.address) &&
+             this.phone.equals(pOther.phone);
+   }
+}
